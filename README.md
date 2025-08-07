@@ -31,4 +31,4 @@ To help job seekers avoid scams by providing a simple tool that flags suspicious
 Text Vectorization: TfidfVectorizer
 
 # 📷 Screenshots
-![Userinput Image ](userinput fake.png)
+![Userinput Image ]((https://github.com/ZeshanFareed/Fake_Job_Posting_Detection_System_Web_App_Django_ML/blob/e3236364a580ef0d60f0e969e1936a46a0b8e82f/userinput%20fake.png)
