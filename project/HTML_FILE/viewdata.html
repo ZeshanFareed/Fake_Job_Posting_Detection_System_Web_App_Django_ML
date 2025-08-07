@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Posting Recognition</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://www.superior-staffing.com/wp-content/uploads/2020/09/Employers.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-heading {
+            font-size: 2.5rem;
+            color: #312222;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result-container {
+            border-radius: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2); /* Light background inside border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .result-message {
+            font-size: 1.5rem;
+            color: #140f0f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button {
+            display: block;
+            margin: 30px auto 0;
+            text-align: center;
+            text-decoration: none;
+            background-color: #ff5722;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            width: 50%;
+        }
+
+        .back-button:hover {
+            background-color: #090908;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="result-heading">{{ message }}</h1>
+        <div class="result-container">
+            <p class="result-message">{{ prediction }}</p>
+            {% if prediction == "True" %}
+                <img src="https://4slonline.com/app_img/blog/front/5%20Best%20Background%20Verification%20Companies%20in%20India-2024.jpg" alt="True Job" class="result-image">
+            {% else %}
+                <img src="https://img.freepik.com/premium-photo/hand-holds-icon-cancellation-symbol-cancel-icon-cross-mark-flat-red-icon-round-x-mark-cancel-button_150455-9637.jpg" alt="Fake Job" class="result-image">
+            {% endif %}
+        </div>
+        <a href="{% url 'user' %}" class="back-button">Go Back</a>
+    </div>
+</body>
+</html>
